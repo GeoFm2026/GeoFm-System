@@ -173,35 +173,7 @@
         }
       }
 
-      .geometric-pattern {
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        opacity: 0.08;
-        z-index: 1;
-      }
 
-      .pattern-1 {
-        top: -100px;
-        right: 10%;
-        transform: rotate(15deg);
-        opacity: 0;
-        animation: fadeIn 3s ease-in-out 0.5s forwards;
-      }
-
-      .pattern-2 {
-        bottom: -80px;
-        left: 5%;
-        transform: rotate(-10deg);
-        opacity: 0;
-        animation: fadeIn 3s ease-in-out 0.7s forwards;
-      }
-
-      @keyframes fadeIn {
-        to {
-          opacity: 0.08;
-        }
-      }
 
       .content-section {
         max-width: 1200px;
@@ -416,6 +388,183 @@
         transform: scale(1.05);
       }
 
+      .timeline {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem 0;
+      }
+
+      .timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: var(--accent-cyan);
+        left: 50%;
+        margin-left: -2px;
+        border-radius: 2px;
+      }
+
+      .timeline-item {
+        position: relative;
+        width: 50%;
+        padding: 1.2rem;
+        margin-bottom: 1.8rem;
+      }
+
+      .timeline-item:nth-child(odd) {
+        left: 0;
+        padding-right: 4rem;
+        text-align: right;
+      }
+
+      .timeline-item:nth-child(even) {
+        left: 50%;
+        padding-left: 4rem;
+      }
+
+      .timeline-content {
+        background: white;
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-md);
+        position: relative;
+        transition: var(--transition);
+      }
+
+      .timeline-content:hover {
+        transform: scale(1.02);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .timeline-content::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: var(--accent-cyan);
+        border: 4px solid white;
+        border-radius: 50%;
+        top: 25px;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content::after {
+        right: -52px;
+      }
+
+      .timeline-item:nth-child(even) .timeline-content::after {
+        left: -52px;
+      }
+
+      .time-badge {
+        display: inline-block;
+        background: var(--primary-blue);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 0.6rem;
+      }
+
+      .session-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--primary-blue);
+        margin-bottom: 0.4rem;
+      }
+
+      .speaker-info {
+        color: var(--accent-cyan);
+        font-weight: 600;
+        margin: 0.4rem 0;
+      }
+
+      .session-description {
+        line-height: 1.6;
+        margin-top: 0.6rem;
+        font-size: 0.95rem;
+      }
+
+      .workshop-details {
+        background: linear-gradient(135deg, rgba(19, 36, 77, 0.08), rgba(10, 15, 29, 0.05));
+        border-radius: var(--border-radius);
+        padding: 1.8rem;
+        margin-top: 2.5rem;
+        text-align: center;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .workshop-details h3 {
+        font-size: 1.4rem;
+        color: var(--primary-blue);
+        margin-bottom: 0.8rem;
+      }
+
+      .workshop-details p {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .topics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1.8rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .topic-card {
+        background: white;
+        border-radius: var(--border-radius);
+        padding: 1.8rem;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid rgba(19, 36, 77, 0.08);
+        transition: var(--transition);
+      }
+
+      .topic-card:hover {
+        border-color: var(--accent-cyan);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .submission-details {
+        background: rgba(19, 36, 77, 0.05);
+        border-radius: var(--border-radius);
+        padding: 2rem;
+        margin-top: 2rem;
+        border-left: 4px solid var(--accent-cyan);
+      }
+
+      .important-dates {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.2rem;
+        margin-top: 1.2rem;
+      }
+
+      .date-item {
+        background: white;
+        padding: 1.2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-sm);
+        text-align: center;
+      }
+
+      .date-item .date {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--primary-blue);
+        margin-bottom: 0.4rem;
+      }
+
+      .date-item .description {
+        font-size: 0.95rem;
+        color: var(--text-dark);
+      }
+
       .footer {
         background: var(--primary-darker);
         color: var(--text-light);
@@ -484,6 +633,25 @@
         .nav-links {
           gap: 0.6rem;
         }
+        
+        .timeline::before {
+          left: 31px;
+        }
+        
+        .timeline-item {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 2rem;
+          text-align: left;
+        }
+        
+        .timeline-item:nth-child(odd) {
+          padding-right: 2rem;
+        }
+        
+        .timeline-content::after {
+          left: -52px;
+        }
       }
 
       @media (max-width: 768px) {
@@ -507,6 +675,11 @@
           grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
         }
 
+        .topics-grid,
+        .important-dates {
+          grid-template-columns: 1fr;
+        }
+
         .content-section {
           padding: 0 1rem;
         }
@@ -518,18 +691,7 @@
     <header class="header">
       <div class="nav-container">
         <div class="logo">Geo<span class="logo-accent">FM</span></div>
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="speakers.html" class="nav-link">Speakers</a></li>
-          <li><a href="organizers.html" class="nav-link">Organizers</a></li>
-          <li><a href="schedule.html" class="nav-link">Schedule</a></li>
-          <li><a href="forum.html" class="nav-link">Forum</a></li>
-          <li><a href="awards.html" class="nav-link">Awards</a></li>
-          <li>
-            <a href="call-for-papers.html" class="nav-link">Call for Papers</a>
-          </li>
-          <li><a href="register.html" class="nav-link">Register</a></li>
-        </ul>
+
       </div>
     </header>
 
@@ -538,124 +700,12 @@
       class="hero"
       style="position: relative; width: 100%; padding-left: 0; padding-right: 0"
     >
-      <div class="geometric-pattern pattern-1">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M40,10 L160,10 L160,190 L40,190 Z"
-            fill="none"
-            stroke="#13244d"
-            stroke-width="1"
-            opacity="0.3"
-          />
-          <path
-            d="M60,30 L140,30 L140,170 L60,170 Z"
-            fill="none"
-            stroke="#13244d"
-            stroke-width="1"
-            opacity="0.3"
-          />
-          <circle
-            cx="100"
-            cy="100"
-            r="30"
-            fill="none"
-            stroke="#3dbbd3"
-            stroke-width="1"
-            opacity="0.5"
-          />
-        </svg>
-      </div>
-      <div class="geometric-pattern pattern-2">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <polygon
-            points="100,10 190,70 160,180 40,180 10,70"
-            fill="none"
-            stroke="#13244d"
-            stroke-width="1"
-            opacity="0.3"
-          />
-          <path
-            d="M100,50 L170,90 L140,160 L60,160 L30,90 Z"
-            fill="none"
-            stroke="#3dbbd3"
-            stroke-width="1"
-            opacity="0.5"
-          />
-        </svg>
-      </div>
-
       <div class="hero-content">
-        <div
-          style="
-            position: absolute;
-            left: -45%;
-            top: 90%;
-            transform: translateY(-50%);
-          "
-        >
-          <img
-            src="riemann_geometry - 副本.svg"
-            alt="几何图形"
-            style="width: 350px; height: auto; max-width: 100%; opacity: 0.75"
-          />
-        </div>
         <h1>Workshop on Geometric Foundation Models</h1>
         <p class="hero-subtitle">
           Unifying Geometric Deep Learning and Foundation Models for Scientific
           Discovery
         </p>
-        <div
-          style="
-            position: absolute;
-            right: -37%;
-            top: 90%;
-            transform: translateY(-50%) rotate(110deg);
-          "
-        >
-          <svg
-            viewBox="0 0 400 350"
-            xmlns="http://www.w3.org/2000/svg"
-            style="width: 300px; height: auto"
-          >
-            <style>
-              .node {
-                fill: var(--accent-cyan);
-              }
-              .line-solid {
-                stroke: #666666;
-                stroke-width: 4;
-                stroke-linecap: round;
-              }
-              .line-dashed {
-                stroke: #999999;
-                stroke-width: 2.5;
-                stroke-dasharray: 8, 6;
-                stroke-linecap: round;
-              }
-              .shade-face {
-                fill: #bfeaf5;
-                opacity: 0.5;
-                stroke: none;
-              }
-            </style>
-            <polygon points="150,50 330,170 300,300" class="shade-face" />
-            <line x1="150" y1="50" x2="40" y2="300" class="line-dashed" />
-            <line x1="40" y1="300" x2="300" y2="300" class="line-dashed" />
-            <line x1="150" y1="50" x2="330" y2="170" class="line-dashed" />
-            <line x1="330" y1="170" x2="300" y2="300" class="line-dashed" />
-            <line x1="150" y1="50" x2="300" y2="300" class="line-dashed" />
-            <line x1="40" y1="300" x2="330" y2="170" class="line-dashed" />
-            <line x1="150" y1="50" x2="190" y2="180" class="line-solid" />
-            <line x1="330" y1="170" x2="190" y2="180" class="line-solid" />
-            <line x1="40" y1="300" x2="190" y2="180" class="line-solid" />
-            <line x1="300" y1="300" x2="190" y2="180" class="line-solid" />
-            <circle cx="330" cy="170" r="22" class="node" />
-            <circle cx="150" cy="50" r="22" class="node" />
-            <circle cx="40" cy="300" r="22" class="node" />
-            <circle cx="300" cy="300" r="22" class="node" />
-            <circle cx="190" cy="180" r="22" class="node" />
-          </svg>
-        </div>
       </div>
     </section>
 
@@ -690,135 +740,131 @@
           </div>
         </div>
 
-        <div class="people-section">
+        <!-- Schedule Section -->
+        <div class="section-container" style="margin-top: 3rem;">
           <div class="section-header">
-            <h2 class="section-title">Workshop Organizers</h2>
-            <p class="section-subtitle">
-              Our distinguished organizing committee bringing together experts
-              across geometry and foundation models
-            </p>
+            <h2 class="section-title">Workshop Schedule</h2>
+            <p class="section-subtitle">Detailed timeline for the GeoFM Workshop @ ICML 2025</p>
           </div>
 
-          <div class="people-grid">
-            <div class="person-card">
-              <div class="person-header">
-                <img
-                  src="照片/Chunchen Wang.png"
-                  alt="Chunchen Wang"
-                  class="person-avatar"
-                />
-                <div class="person-info">
-                  <h3>Chunchen Wang</h3>
-                  <div class="role">Ph.D. Student, MBZUAI</div>
-                </div>
-              </div>
-              <div class="person-body">
-                <p>
-                  MBZUAI's PhD researcher focusing on graph data mining and
-                  machine learning algorithms.
-                </p>
-              </div>
-              <div class="person-footer">
-                <a
-                  href="https://scholar.google.com/citations?user=4pCIcsUAAAAJ"
-                  class="social-link"
-                  target="_blank"
-                >
-                  <i class="fas fa-graduation-cap"></i>
-                </a>
-              </div>
-            </div>
+          <div class="abstract-section">
+            <p><strong>Date:</strong> July 20, 2025 &nbsp; | &nbsp; <strong>Time:</strong> 9:00 AM - 4:30 PM &nbsp; | &nbsp; <strong>Location:</strong> ICML 2025 Conference Venue, Vienna, Austria</p>
+            <p style="margin-top: 0.8rem;">All times are in Central European Summer Time (CEST)</p>
+          </div>
 
-            <div class="person-card">
-              <div class="person-header">
-                <img
-                  src="照片/Karish Grove.jpg"
-                  alt="Karish Grover"
-                  class="person-avatar"
-                />
-                <div class="person-info">
-                  <h3>Karish Grover</h3>
-                  <div class="role">Ph.D. Student, CMU</div>
-                </div>
-              </div>
-              <div class="person-body">
-                <p>
-                  Researching machine learning systems and graph neural networks
-                  at Carnegie Mellon University.
-                </p>
-              </div>
-              <div class="person-footer">
-                <a
-                  href="https://karish-grover.github.io/"
-                  class="social-link"
-                  target="_blank"
-                >
-                  <i class="fas fa-link"></i>
-                </a>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <span class="time-badge">9:00 AM - 9:15 AM</span>
+                <h3 class="session-title">Opening Remarks</h3>
+                <p class="session-description">Workshop introduction and overview of the day's agenda by the organizing committee.</p>
               </div>
             </div>
-
-            <div class="person-card">
-              <div class="person-header">
-                <img
-                  src="照片/Pietro Liò.png"
-                  alt="Pietro Liò"
-                  class="person-avatar"
-                />
-                <div class="person-info">
-                  <h3>Pietro Liò</h3>
-                  <div class="role">Professor, University of Cambridge</div>
-                </div>
-              </div>
-              <div class="person-body">
-                <p>
-                  Expert in AI and bioinformatics focusing on GNNs and
-                  multimodal learning for computational biology.
-                </p>
-              </div>
-              <div class="person-footer">
-                <a
-                  href="https://www.cl.cam.ac.uk/~pl219/"
-                  class="social-link"
-                  target="_blank"
-                >
-                  <i class="fas fa-link"></i>
-                </a>
+            
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <span class="time-badge">9:15 AM - 9:45 AM</span>
+                <h3 class="session-title">Keynote: Geometric Deep Learning for Science</h3>
+                <p class="speaker-info">Speaker: Pietro Liò, University of Cambridge</p>
+                <p class="session-description">Exploring the intersection of geometric deep learning and scientific discovery, focusing on applications in computational biology.</p>
               </div>
             </div>
-
-            <div class="person-card">
-              <div class="person-header">
-                <img
-                  src="照片/Philip S. Yu.avif"
-                  alt="Philip S. Yu"
-                  class="person-avatar"
-                />
-                <div class="person-info">
-                  <h3>Philip S. Yu</h3>
-                  <div class="role">Distinguished Professor, UIC</div>
-                </div>
-              </div>
-              <div class="person-body">
-                <p>
-                  Titan in data mining and machine learning, ACM/IEEE Fellow,
-                  recipient of SIGKDD Innovation Award.
-                </p>
-              </div>
-              <div class="person-footer">
-                <a
-                  href="https://cs.uic.edu/profiles/philip-yu/"
-                  class="social-link"
-                  target="_blank"
-                >
-                  <i class="fas fa-link"></i>
-                </a>
+            
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <span class="time-badge">9:45 AM - 10:15 AM</span>
+                <h3 class="session-title">Keynote: Scaling Geometric Foundation Models</h3>
+                <p class="speaker-info">Speaker: Le Song, MBZUAI / GenBio AI</p>
+                <p class="session-description">Challenges and opportunities in scaling geometric foundation models for complex scientific applications.</p>
               </div>
             </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <span class="time-badge">10:15 AM - 10:45 AM</span>
+                <h3 class="session-title">Oral Presentations I</h3>
+                <p class="session-description">Selected paper presentations on equivariant representations and symmetry-aware modeling.</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <span class="time-badge">10:45 AM - 11:30 AM</span>
+                <h3 class="session-title">Coffee Break & Poster Session I</h3>
+                <p class="session-description">Networking opportunity with poster presenters and workshop participants.</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <span class="time-badge">11:30 AM - 12:00 PM</span>
+                <h3 class="session-title">Keynote: Graph Foundation Models</h3>
+                <p class="speaker-info">Speaker: Christos Faloutsos, CMU</p>
+                <p class="session-description">Large-scale graph mining and foundation models for complex network analysis.</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <span class="time-badge">12:00 PM - 1:30 PM</span>
+                <h3 class="session-title">Lunch Break</h3>
+                <p class="session-description">Informal discussions and networking opportunity.</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <span class="time-badge">1:30 PM - 2:00 PM</span>
+                <h3 class="session-title">Keynote: Geometric Generative Models for Molecular Design</h3>
+                <p class="speaker-info">Speaker: Yuanqi Du, Cornell University</p>
+                <p class="session-description">Advanced generative models for molecular and materials discovery through geometric deep learning.</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <span class="time-badge">2:00 PM - 2:30 PM</span>
+                <h3 class="session-title">Oral Presentations II</h3>
+                <p class="session-description">Selected paper presentations on geometric reasoning and foundation models.</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <span class="time-badge">2:30 PM - 3:15 PM</span>
+                <h3 class="session-title">Coffee Break & Poster Session II</h3>
+                <p class="session-description">Continued networking with refreshments and poster discussions.</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <span class="time-badge">3:15 PM - 4:00 PM</span>
+                <h3 class="session-title">Panel Discussion: The Future of Geometric Foundation Models</h3>
+                <p class="speaker-info">Panelists: Philip S. Yu (UIC), Marinka Zitnik (Harvard), Jianan Zhao (Mila), Li Sun (BUPT)</p>
+                <p class="session-description">Moderated discussion on current challenges and future directions in geometric foundation models for science.</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <span class="time-badge">4:00 PM - 4:30 PM</span>
+                <h3 class="session-title">Best Paper Awards & Closing Remarks</h3>
+                <p class="session-description">Announcement of workshop awards and concluding remarks from the organizing committee.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="workshop-details">
+            <h3>Workshop Details</h3>
+            <p><i class="fas fa-calendar-alt" style="margin-right: 0.5rem;"></i> July 20, 2025 (Sunday)</p>
+            <p><i class="fas fa-clock" style="margin-right: 0.5rem;"></i> 9:00 AM - 4:30 PM CEST</p>
+            <p><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i> ICML 2025 Conference Venue, Vienna, Austria</p>
+            <p style="margin-top: 1rem;"><strong>Note:</strong> All attendees must register for both ICML 2025 and the GeoFM workshop. Please check the registration page for details.</p>
           </div>
         </div>
 
-        <div class="people-section" style="margin-top: 3.5rem">
+        <div class="people-section" style="margin-top: 3.5rem;">
           <div class="section-header">
             <h2 class="section-title">Keynote Speakers</h2>
             <p class="section-subtitle">
@@ -841,21 +887,6 @@
                   <div class="role">Ph.D. Student, Cornell University</div>
                 </div>
               </div>
-              <div class="person-body">
-                <p>
-                  Researching geometric deep learning and generative models for
-                  molecular discovery and materials design.
-                </p>
-              </div>
-              <div class="person-footer">
-                <a
-                  href="https://yuanqidu.github.io/"
-                  class="social-link"
-                  target="_blank"
-                >
-                  <i class="fas fa-link"></i>
-                </a>
-              </div>
             </div>
 
             <div class="person-card">
@@ -873,21 +904,6 @@
                   </div>
                 </div>
               </div>
-              <div class="person-body">
-                <p>
-                  Focused on graph representation learning and geometric deep
-                  learning for knowledge reasoning.
-                </p>
-              </div>
-              <div class="person-footer">
-                <a
-                  href="https://andyjzhao.github.io/"
-                  class="social-link"
-                  target="_blank"
-                >
-                  <i class="fas fa-link"></i>
-                </a>
-              </div>
             </div>
 
             <div class="person-card">
@@ -903,21 +919,6 @@
                   <div class="role">Fredkin University Professor, CMU</div>
                 </div>
               </div>
-              <div class="person-body">
-                <p>
-                  Legendary figure in data mining focusing on large-scale graph
-                  mining and anomaly detection.
-                </p>
-              </div>
-              <div class="person-footer">
-                <a
-                  href="https://cs.cmu.edu/~christos"
-                  class="social-link"
-                  target="_blank"
-                >
-                  <i class="fas fa-link"></i>
-                </a>
-              </div>
             </div>
 
             <div class="person-card">
@@ -932,20 +933,213 @@
                   <div class="role">Professor, MBZUAI / CTO, GenBio AI</div>
                 </div>
               </div>
-              <div class="person-body">
-                <p>
-                  Leader in AI-driven drug design, building foundation models
-                  for geometric scientific data.
-                </p>
+            </div>
+
+            <div class="person-card">
+              <div class="person-header">
+                <img
+                  src="各前部分人物照片/Marinka Zitnik.png"
+                  alt="Marinka Zitnik"
+                  class="person-avatar"
+                />
+                <div class="person-info">
+                  <h3>Marinka Zitnik</h3>
+                  <div class="role">Associate Professor, Harvard University</div>
+                </div>
               </div>
-              <div class="person-footer">
-                <a
-                  href="https://dasongle.github.io/"
-                  class="social-link"
-                  target="_blank"
-                >
-                  <i class="fas fa-link"></i>
-                </a>
+            </div>
+
+            <div class="person-card">
+              <div class="person-header">
+                <img
+                  src="各前部分人物照片/Li Sun.png"
+                  alt="Li Sun"
+                  class="person-avatar"
+                />
+                <div class="person-info">
+                  <h3>Li Sun</h3>
+                  <div class="role">Associate Professor, Beijing University of Posts and Telecommunications</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call for Papers Section -->
+        <div class="section-container" style="margin-top: 3.5rem;">
+          <div class="section-header">
+            <h2 class="section-title">Call for Papers</h2>
+            <p class="section-subtitle">Submit your research on geometric foundation models</p>
+          </div>
+
+          <div class="abstract-section">
+            <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 1rem;">Topics of Interest</h3>
+            <div class="topics-grid">
+              <div class="topic-card">
+                <h4 style="color: var(--primary-blue); margin-bottom: 0.8rem; font-size: 1.1rem;">Equivariant & Invariant Architectures</h4>
+                <ul style="padding-left: 1.5rem; line-height: 1.6; font-size: 0.95rem;">
+                  <li>SE(3)-equivariant foundation models</li>
+                  <li>Manifold-valued representation learning</li>
+                  <li>Group-theoretic approaches to geometric deep learning</li>
+                </ul>
+              </div>
+              <div class="topic-card">
+                <h4 style="color: var(--primary-blue); margin-bottom: 0.8rem; font-size: 1.1rem;">Scientific Applications</h4>
+                <ul style="padding-left: 1.5rem; line-height: 1.6; font-size: 0.95rem;">
+                  <li>Geometric foundation models for molecular design</li>
+                  <li>Materials discovery with symmetry-aware models</li>
+                  <li>Computational biology and protein engineering</li>
+                </ul>
+              </div>
+              <div class="topic-card">
+                <h4 style="color: var(--primary-blue); margin-bottom: 0.8rem; font-size: 1.1rem;">Foundation Model Techniques</h4>
+                <ul style="padding-left: 1.5rem; line-height: 1.6; font-size: 0.95rem;">
+                  <li>Pretraining strategies for geometric data</li>
+                  <li>Transfer learning across geometric domains</li>
+                  <li>Self-supervised learning with geometric constraints</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="submission-details">
+            <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 1rem;">Submission Guidelines</h3>
+            <ul style="padding-left: 2rem; margin-top: 1rem; line-height: 1.8; font-size: 1rem;">
+              <li><strong>Paper Format:</strong> Maximum 8 pages excluding references and appendices, using ICML 2025 template</li>
+              <li><strong>Review Process:</strong> Double-blind review by at least 3 expert reviewers</li>
+              <li><strong>Non-Archival:</strong> Accepted papers will be posted on the workshop website</li>
+            </ul>
+            
+            <div class="important-dates">
+              <div class="date-item">
+                <div class="date">June 1, 2025</div>
+                <div class="description">Abstract Submission Deadline</div>
+              </div>
+              <div class="date-item">
+                <div class="date">June 8, 2025</div>
+                <div class="description">Full Paper Deadline</div>
+              </div>
+              <div class="date-item">
+                <div class="date">June 22, 2025</div>
+                <div class="description">Author Notification</div>
+              </div>
+              <div class="date-item">
+                <div class="date">June 30, 2025</div>
+                <div class="description">Camera-ready Deadline</div>
+              </div>
+            </div>
+            
+            <p style="margin-top: 1.5rem; font-size: 1.05rem;">
+              <strong>Submission Portal:</strong> <a href="#" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600;">https://openreview.net/group?id=geofm-icml2025</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="people-section">
+          <div class="section-header">
+            <h2 class="section-title">Workshop Organizers</h2>
+            <p class="section-subtitle">
+              Our distinguished organizing committee bringing together experts
+              across geometry and foundation models
+            </p>
+          </div>
+
+          <div class="people-grid">
+            <div class="person-card">
+              <div class="person-header">
+                <img
+                  src="照片/Chunchen Wang.png"
+                  alt="Chunchen Wang"
+                  class="person-avatar"
+                />
+                <div class="person-info">
+                  <h3>Chunchen Wang</h3>
+                  <div class="role">Ph.D. Student, MBZUAI</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="person-card">
+              <div class="person-header">
+                <img
+                  src="照片/Karish Grove.jpg"
+                  alt="Karish Grover"
+                  class="person-avatar"
+                />
+                <div class="person-info">
+                  <h3>Karish Grover</h3>
+                  <div class="role">Ph.D. Student, CMU</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="person-card">
+              <div class="person-header">
+                <img
+                  src="照片/Pietro Liò.png"
+                  alt="Pietro Liò"
+                  class="person-avatar"
+                />
+                <div class="person-info">
+                  <h3>Pietro Liò</h3>
+                  <div class="role">Professor, University of Cambridge</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="person-card">
+              <div class="person-header">
+                <img
+                  src="照片/Philip S. Yu.avif"
+                  alt="Philip S. Yu"
+                  class="person-avatar"
+                />
+                <div class="person-info">
+                  <h3>Philip S. Yu</h3>
+                  <div class="role">Distinguished Professor, UIC</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="person-card">
+              <div class="person-header">
+                <img
+                  src="各前部分人物照片/Marinka Zitnik.png"
+                  alt="Marinka Zitnik"
+                  class="person-avatar"
+                />
+                <div class="person-info">
+                  <h3>Marinka Zitnik</h3>
+                  <div class="role">Associate Professor, Harvard University</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="person-card">
+              <div class="person-header">
+                <img
+                  src="各前部分人物照片/Li Sun.png"
+                  alt="Li Sun"
+                  class="person-avatar"
+                />
+                <div class="person-info">
+                  <h3>Li Sun</h3>
+                  <div class="role">Associate Professor, Beijing University of Posts and Telecommunications</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="person-card">
+              <div class="person-header">
+                <img
+                  src="各前部分人物照片/Zhongtian Sun.webp"
+                  alt="Zhongtian Sun"
+                  class="person-avatar"
+                />
+                <div class="person-info">
+                  <h3>Zhongtian Sun</h3>
+                  <div class="role">Lecturer, University of Kent</div>
+                </div>
               </div>
             </div>
           </div>
