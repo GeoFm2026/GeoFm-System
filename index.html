@@ -708,12 +708,12 @@
       style="position: relative; width: 100%; padding-left: 0; padding-right: 0"
     >
       <!-- Left Geometric SVG -->
-      <div style="position: absolute; left: 0%; top: 50%; transform: translateY(-50%); opacity: 0.7; z-index: 5; max-width: 400px; width: 35%;">
+      <div style="position: absolute; left: 0%; top: 50%; transform: translateY(-50%); opacity: 0.7; z-index: 1; max-width: 300px; width: 25%;">
         <img src="riemann_geometry - 副本.svg" alt="Riemann Geometry" style="width: 100%; height: auto;" />
       </div>
       
       <!-- Main Content -->
-      <div class="hero-content" style="max-width: 1200px; padding: 0 1rem;">
+      <div class="hero-content" style="max-width: 1200px; padding: 0 1rem; position: relative; z-index: 10;">
         <h1 style="font-size: 3.2rem; line-height: 1.3; max-width: 1000px; margin: 0 auto 1rem;">Geo4S: Geometric Foundation Models for Science Discovery Workshop</h1>
         <p class="hero-subtitle">
           Unifying Geometric Deep Learning and Foundation Models for Scientific
@@ -722,7 +722,7 @@
       </div>
       
       <!-- Right Geometric SVG -->
-      <div style="position: absolute; right: 5%; top: 50%; transform: translateY(-50%); opacity: 0.7; z-index: 5; max-width: 250px; width: 20%;">
+      <div style="position: absolute; right: 5%; top: 50%; transform: translateY(-50%); opacity: 0.7; z-index: 1; max-width: 200px; width: 15%;">
         <svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg">
           <polygon points="150,50 330,170 300,300" style="fill: #BFEAF5; opacity: 0.5; stroke: none;" />
           <line x1="150" y1="50" x2="40" y2="300" style="stroke: #999999; stroke-width: 2.5; stroke-dasharray: 8, 6; stroke-linecap: round;" />
@@ -744,6 +744,42 @@
       </div>
     </section>
 
+    <!-- Responsive adjustments for hero section -->
+    <style>
+      @media (max-width: 992px) {
+        .hero-content {
+          padding: 0 2rem;
+        }
+        
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+        
+        /* Hide left SVG on medium screens */
+        .hero > div:first-child {
+          display: none;
+        }
+        
+        /* Adjust right SVG size */
+        .hero > div:last-child {
+          max-width: 150px;
+          width: 20%;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+        
+        /* Hide both SVGs on small screens */
+        .hero > div:first-child,
+        .hero > div:last-child {
+          display: none;
+        }
+      }
+    </style>
+
     <div class="content-section">
       <div class="section-container">
         <div class="section-header" id="overview">
@@ -757,7 +793,7 @@
         <div class="abstract-section">
           <div class="abstract-content">
             <p>
-              The motivation for this workshop builds on the rapid progress of foundation models and their growing impact on AI4Science. Geometric structures, such as graphs in biochemical molecules, helical arrangements in proteins and DNA, and crystalline lattices, are central to many high-impact applications in the life and material sciences. While recent advances, including AlphaFold3 and early adaptations of large language models to scientific data, demonstrate the promise of this direction, foundation models for geometric structures remain at an early stage. In particular, core geometric principles, most notably symmetry-aware modeling through equivariant and conformal representations, are not yet systematically leveraged, leaving fundamental questions around generality, data efficiency, interpretability, and trustworthiness unresolved. We are committed to Delving into the Microworld through Riemannian Geometry
+              The motivation for this workshop builds on the rapid progress of foundation models and their expanding role in AI for Science. Although geometric structures of atoms (e.g., biochemical molecules, proteins and crystalline lattices) lies at the heart of many high-impact applications in the life and material sciences, a unified perspective on these atomic-scale geometries remains lacking. While multimodal foundation models have recently demonstrated considerable potential, foundation models dedicated to geometric structures are still in their early stages. Crucially, core geometric principles (e.g., symmetry modeling, topological invariance, and intrinsic metrics) have not yet been systematically integrated, leaving fundamental challenges in generality, data efficiency, interpretability, and trustworthiness unaddressed. Riemannian geometry provides a principled framework for analyzing such structures and their properties, yet it remains underexplored in AI4Science. This workshop aims to bridge this gap by Delving into the Microworld through Riemannian Geometry
             </p>
           </div>
         </div>
@@ -1154,7 +1190,14 @@
             </div>
             
             <p style="margin-top: 1.5rem; font-size: 1.05rem;">
-              <strong>Submission Portal:</strong> <a href="#" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600;">https://openreview.net/group?id=geofm-icml2026</a>
+              <strong>Submission Portal:</strong> <a href="https://openreview.net/" target="_blank" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600;">https://openreview.net/</a>
+            </p>
+          </div>
+
+          <div class="submission-details">
+            <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 1rem;">Best Papers/Reviewers Awards</h3>
+            <p style="line-height: 1.8; margin-top: 1rem; font-size: 1rem;">
+              Each submission will receive <strong>3 constructive reviews</strong> and each reviewer will review <strong>up to 3 submissions</strong>. The authors are responsible for evaluating the reviewers. We will announce the Best Paper, Best Paper Runner Ups, and Outstanding Reviewers at closing remarks.
             </p>
           </div>
         </div>
@@ -1288,7 +1331,7 @@
       <div style="position: relative; padding: 2rem; max-width: 1200px; margin: 2rem auto; height: 300px;">
         <!-- Program Committee -->
         <div style="position: absolute; left: 0; top: 0; width: 60%; background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; justify-content: flex-start;">
-          <h2 style="color: var(--primary-blue); font-size: 1.6rem; font-weight: 700; margin-bottom: 1.5rem;">Program Committee.</h2>
+          <h2 style="color: var(--primary-blue); font-size: 1.6rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center;">Program Committee.</h2>
           <div style="display: flex; flex-direction: column; gap: 0.8rem;">
             <div style="background: rgba(19, 36, 77, 0.05); padding: 0.8rem 1rem; border-radius: 8px; border-left: 3px solid var(--accent-cyan);">Pietro Liò</div>
             <div style="background: rgba(19, 36, 77, 0.05); padding: 0.8rem 1rem; border-radius: 8px; border-left: 3px solid var(--accent-cyan);">Philip S. Yu (ACM/IEEE Fellow)</div>
@@ -1303,6 +1346,53 @@
             <img src="image.png" alt="XeonLabs Logo" style="height: 80px; width: auto;" />
             <h3 style="color: var(--primary-blue); font-size: 1.8rem; font-weight: bold; margin: 0;">XeonLabs</h3>
             <p style="color: var(--secondary-blue); font-size: 1rem; margin: 0;">Generous Support</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Audience and Accessibility Section -->
+      <div class="section-container" style="margin-top: 3.5rem;">
+        <div class="section-header">
+          <h2 class="section-title">Audience and Accessibility</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+          <!-- Audience Card -->
+          <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center;">
+            <div style="font-size: 2.5rem; color: var(--accent-cyan); margin-bottom: 1rem;">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 style="color: var(--primary-blue); font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem;">In-person Audience</h3>
+            <p style="color: var(--text-dark); font-size: 1.1rem; font-weight: 600;">~100 participants</p>
+          </div>
+
+          <!-- Submissions Card -->
+          <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center;">
+            <div style="font-size: 2.5rem; color: var(--accent-cyan); margin-bottom: 1rem;">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <h3 style="color: var(--primary-blue); font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem;">Submissions</h3>
+            <p style="color: var(--text-dark); font-size: 1.1rem; font-weight: 600;">~80 papers</p>
+            <p style="color: var(--secondary-blue); font-size: 0.9rem; margin-top: 0.5rem;">Top 50% accepted</p>
+          </div>
+
+          <!-- Reviewers Card -->
+          <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center;">
+            <div style="font-size: 2.5rem; color: var(--accent-cyan); margin-bottom: 1rem;">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3 style="color: var(--primary-blue); font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem;">Reviewer Pool</h3>
+            <p style="color: var(--text-dark); font-size: 1.1rem; font-weight: 600;">60+ qualified members</p>
+          </div>
+
+          <!-- Accessibility Card -->
+          <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center;">
+            <div style="font-size: 2.5rem; color: var(--accent-cyan); margin-bottom: 1rem;">
+              <i class="fas fa-video"></i>
+            </div>
+            <h3 style="color: var(--primary-blue); font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem;">Accessibility</h3>
+            <p style="color: var(--text-dark); font-size: 0.95rem;">Live-streamed event</p>
+            <p style="color: var(--text-dark); font-size: 0.95rem; margin-top: 0.5rem;">Whova event for networking</p>
           </div>
         </div>
       </div>
